@@ -6,13 +6,13 @@ public class Garcom {
     private final Semaphore vagas;
 
     public Garcom(int totalDeFilosofos){
-        this.vagas=new Semaphore(totalDeFilosofos = -1,true);
+        this.vagas=new Semaphore(totalDeFilosofos - 1,true);
     }
 
     public void pedirPermissao() throws InterruptedException {
         vagas.acquire();
     }
-    public void liberarLigar(){
+    public void liberarLugar(){
         vagas.release();
     }
 
